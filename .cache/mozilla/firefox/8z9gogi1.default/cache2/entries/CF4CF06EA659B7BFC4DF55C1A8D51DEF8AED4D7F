@@ -1,0 +1,683 @@
+var IpLeak =
+{
+	torrentHash: "",
+	torrentUpdateInterval: 0,
+	torrentViewRequest: false,
+
+	dnsDetectionTestMax: 5,
+	dnsDetectionTestDone: 0,
+	dnsDetectionServers: 0,
+	dnsDetectionErrors: 0,
+	dnsDetectionResults: new Array(),
+
+	tasks: new Array(),
+
+	start: function () {
+		IpLeak.data = JSON.parse(jQuery("#jsonData").attr("data-json"));
+
+		IpLeak.initTooltip(jQuery("[data-tooltip]"));
+
+		jQuery("#geolocation_detection_start_button").click(function() {
+			IpLeak.geolocationDetectionStart();
+		});
+
+		jQuery("#torrent_detection_refresh").click(function() {
+			IpLeak.torrentDetectionUpdate();
+		});
+
+		jQuery(".js_required").fadeIn(1000);
+
+		jQuery("span[data-time]").each(function () {
+			var t = jQuery(this).attr("data-time");
+			var m = moment.unix(t);
+			jQuery(this).text(m.format('dddd D MMMM YYYY HH:mm:ss'));
+		});
+
+		IpLeak.tasks.push("client_only");
+
+		if (jQuery("#dnsplaceholder_waits").length != 0) {
+			IpLeak.tasks.push("dns_detection");
+		}
+
+		if (jQuery("#myipv4_placeholder").length != 0) {
+			IpLeak.tasks.push("rtc_detection");
+			IpLeak.tasks.push("ipv4_address");
+			IpLeak.tasks.push("ipv6_address");
+			IpLeak.tasks.push("browser_default");
+		}
+
+		if(jQuery("#map").length != 0) {
+			IpLeak.tasks.push("google_maps");
+		}
+
+		IpLeak.nextTask();
+	},
+
+	fetch: function(url, callbackDone, callbackFail, callbackAlways)
+	{
+		IpLeak.fetchSingle(url, callbackDone, callbackFail, callbackAlways, 1, 3);
+	},
+
+	fetchSingle: function(url, callbackDone, callbackFail, callbackAlways, iTry, nTry)
+	{
+		var timeoutMs = 5000;
+		var timeStart = (new Date).getTime();
+
+		jQuery.ajax(
+			{
+				url:url,
+				timeout: timeoutMs,
+				cache: false
+			}
+		)
+		.done(function (data) {
+			var timeDelta = (new Date).getTime() - timeStart;
+			callbackDone(data, timeDelta);
+			callbackAlways();
+		})
+		.fail(function (jqXHR, textStatus, error) {
+			callbackFail(textStatus, iTry, nTry);
+			if(iTry < nTry)
+			{
+				IpLeak.fetchSingle(url, callbackDone, callbackFail, callbackAlways, iTry+1, nTry);
+			}
+			else
+			{
+				callbackAlways();
+			}
+		})
+		.always(function () {
+			//callbackAlways();
+		});
+	},
+
+	nextTask: function()
+	{
+		var timeoutMs = 5000;
+
+		if(IpLeak.tasks.length == 0)
+		{
+			return;
+		}
+
+		var task = IpLeak.tasks.shift();
+
+		if(task == "client_only")
+		{
+			if (jQuery("#plugins")) {
+				jQuery("#system").html(IpLeak.dumpInfoSystem());
+				jQuery("#screen").html(IpLeak.dumpInfoScreen());
+				jQuery("#plugins").html(IpLeak.dumpInfoPlugins());
+				jQuery("#mimetypes").html(IpLeak.dumpInfoMimeTypes());
+			}
+
+			IpLeak.nextTask();
+		}
+		else if(task == "ipv4_address")
+		{
+			IpLeak.fetch("https://ipv4.ipleak.net/?mode=ajax",
+				function(data)
+				{
+					jQuery("#myipv4_placeholder").html(data);
+					IpLeak.initTooltip(jQuery("#myipv4_placeholder").find("[data-tooltip]"));
+				},
+				function(error, iTry, nTry)
+				{
+					var errorMsg = error;
+					if(iTry<nTry)
+						errorMsg += " - Try " + iTry + "/" + nTry;
+					jQuery("#myipv4_placeholder").html("<div class='docs_center'><img class='status' src='/static/images/status/no.png'>IPv4 test not reachable. <span class='notes'>(" + errorMsg + ")</span></div>");
+				},
+				function()
+				{
+					IpLeak.nextTask();
+				}
+			)
+		}
+		else if(task == "ipv6_address")
+		{
+			IpLeak.fetch("https://ipv6.ipleak.net/?mode=ajax",
+				function(data)
+				{
+					jQuery("#myipv6_placeholder").html(data);
+					IpLeak.initTooltip(jQuery("#myipv4_placeholder").find("[data-tooltip]"));
+				},
+				function(error, iTry, nTry)
+				{
+					var errorMsg = error;
+					if(iTry<nTry)
+						errorMsg += " - Try " + iTry + "/" + nTry;
+					jQuery("#myipv6_placeholder").html("<div class='docs_center'><img class='status' src='/static/images/status/no.png'>IPv6 test not reachable. <span class='notes'>(" + errorMsg + ")</span></div>");
+				},
+				function()
+				{
+					IpLeak.nextTask();
+				}
+			)
+		}
+		else if(task == "browser_default")
+		{
+			IpLeak.fetch("https://ipleak.net/iplayer/",
+				function(data, elapsed)
+				{
+					jQuery("#my_browser_default").html("<img class='status' src='/static/images/status/yes.png'>" + data.iplayer + " <span class='notes'>(" + elapsed + " ms)</span>");
+
+					IpLeak.fetch("https://fallback-" + data.iplayer.toLowerCase() + ".ipleak.net/iplayer/",
+						function(data, elapsed)
+						{
+							jQuery("#my_browser_fallback").html("<img class='status' src='/static/images/status/yes.png'>" + data.iplayer + " <span class='notes'>(" + elapsed + " ms)</span>");
+						},
+						function(error, iTry, nTry)
+						{
+							var errorMsg = error;
+							if(iTry<nTry)
+								errorMsg += " - Try " + iTry + "/" + nTry;
+							jQuery("#my_browser_fallback").html("<img class='status' src='/static/images/status/no.png'>Fail <span class='notes'>(" + errorMsg + ")</span>");
+						},
+						function()
+						{
+							IpLeak.nextTask();
+						}
+					)
+				},
+				function(error, iTry, nTry)
+				{
+					var errorMsg = error;
+					if(iTry<nTry)
+						errorMsg += " - Try " + iTry + "/" + nTry;
+					jQuery("#my_browser_default").html("<img class='status' src='/static/images/status/no.png'>Fail <span class='notes'>(" + errorMsg + ")</span>");
+					jQuery("#my_browser_fallback").html("<img class='status' src='/static/images/status/no.png'>Fail <span class='notes'>(skipped)</span>");
+					IpLeak.nextTask();
+				},
+				function()
+				{
+				}
+			)
+		}
+		else if(task == "rtc_detection")
+		{
+			IpLeak.rtcDetection();
+
+			IpLeak.nextTask(); // Note: don't wait results.
+		}
+		else if(task == "dns_detection")
+		{
+			setTimeout(function(){
+				IpLeak.dnsDetectionTestMax = parseInt(IpLeak.getUrlParam("dns_tests", 100));
+				if (IpLeak.dnsDetectionTestMax > 1000)
+					IpLeak.dnsDetectionTestMax = 1000;
+				for (var i = 0; i < IpLeak.dnsDetectionTestMax; i++)
+					IpLeak.dnsDetection();
+			}, 6000);
+
+			IpLeak.nextTask(); // Note: don't wait results.
+		}
+		else if(task == "google_maps")
+		{
+			var url = "https://maps.google.com/?ie=UTF8&ll=" + IpLeak.data.latitude + "," + IpLeak.data.longitude + "&t=h&z=10&output=embed";
+			jQuery("#map").attr("src",url);
+
+			IpLeak.nextTask();
+		}
+	},
+
+	dumpKeyValue: function (name, value) {
+		return "<tr><td>" + name + ": </td><td>" + value + "</td></tr>";
+	},
+
+	dumpInfoSystem: function () {
+		html = "";
+		html += "<table class=\"properties details\">";
+		html += IpLeak.dumpKeyValue("Platform", navigator.platform);
+		html += IpLeak.dumpKeyValue("Cookie enabled", navigator.cookieEnabled);
+		html += IpLeak.dumpKeyValue("Java enabled", navigator.javaEnabled());
+		if (navigator.taintEnabled)
+		html += IpLeak.dumpKeyValue("Taint enabled", navigator.taintEnabled());
+		html += IpLeak.dumpKeyValue("Online", navigator.onLine);
+		html += "</table>";
+		return html;
+	},
+
+	dumpInfoScreen: function () {
+		html = "";
+		html += "<table class=\"properties details\">";
+		html += IpLeak.dumpKeyValue("Your screen", window.screen.width + " x " + window.screen.height);
+
+		html += IpLeak.dumpKeyValue("Available screen", window.screen.availWidth + " x " + window.screen.availHeight);
+		html += IpLeak.dumpKeyValue("Color depth", window.screen.colorDepth);
+		html += IpLeak.dumpKeyValue("Pixel depth", window.screen.pixelDepth);
+		html += "</table>";
+		return html;
+	},
+
+	dumpInfoPlugins: function () {
+		html = "";
+		if ((navigator.plugins) && (navigator.plugins.length > 0)) {
+			html += "<div class=\"maxheight\">";
+			html += "<table class=\"properties details\">";
+			for (var i = 0; i < navigator.plugins.length ; i++) {
+				html += "<tr><td>Name: </td><td>" + navigator.plugins[i].name + "</td></tr>";
+
+				if (navigator.plugins[i].filename != "")
+					html += "<tr><td>File name: </td><td>" + navigator.plugins[i].filename + "</td></tr>";
+
+				if (navigator.plugins[i].description != "")
+					html += "<tr><td>Description: </td><td>" + navigator.plugins[i].description + "</td></tr>";
+
+				html += "<tr><td class=\"separator\" colspan=\"2\"></td><tr>";
+			}
+			html += "</table>";
+			html += "</div>";
+		}
+		else
+			html += "<div class=\"nodata\">No data available.</div>";
+		return html;
+	},
+
+	dumpInfoMimeTypes: function () {
+		html = "";
+		if ((navigator.mimeTypes) && (navigator.mimeTypes.length > 0)) {
+			html += "<div class=\"maxheight\">";
+			html += "<table class=\"properties details\">";
+			for (var i = 0; i < navigator.mimeTypes.length ; i++) {
+				html += "<tr><td>Mime Type: </td><td>" + navigator.mimeTypes[i].type + "</td></tr>";
+				html += "<tr><td>Extensions: </td><td>";
+				if (navigator.mimeTypes[i].suffixes != "")
+					html += (navigator.mimeTypes[i].suffixes)
+				else
+					html += (" * ");
+				html += "</td></tr>";
+
+				if (navigator.mimeTypes[i].description != "")
+					html += "<tr><td>Description: </td><td>" + navigator.mimeTypes[i].description + "</td></tr>";
+
+				if (navigator.mimeTypes[i].enabledPlugin)
+					html += "<tr><td>Plugin: </td><td>" + navigator.mimeTypes[i].enabledPlugin.name + "</td></tr>";
+
+				html += "<tr><td class=\"separator\" colspan=\"2\"></td><tr>";
+			}
+			html += "</table>";
+			html += "</div>";
+		}
+		else
+			html += "<div class=\"nodata\">No data available.</div>";
+		return html;
+	},
+
+	query: function (q) {
+		window.location = "/" + q;
+	},
+
+	initTooltip: function (src) {
+		var moveLeft = 10;
+		var moveDown = 20;
+		src.hover(
+		  function (e) {
+			  var tooltip = jQuery(this).attr("data-tooltip");
+			  if (tooltip != "") {
+				  jQuery("#root").before('<div id="tooltip"></div>')
+				  jQuery("div#tooltip").text(tooltip);
+			  }
+		  },
+		  function (e) {
+			  jQuery("div#tooltip").remove();
+		  }
+		);
+		src.mousemove(function (e) {
+			jQuery("div#tooltip").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+			jQuery("div#tooltip").fadeIn(500);
+		});
+	},
+
+	getUrlParam: function (sParam, def) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+		}
+
+		return def;
+	},
+
+	geolocationDetectionStart: function () {
+		jQuery('#geolocation_detection_start').slideUp();
+		jQuery('#geolocation_detection_wait').slideDown();
+
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(IpLeak.geolocationSuccess, IpLeak.geolocationDetectionError);
+		}
+		else {
+			IpLeak.geolocationDetectionErrorMessage("Geolocation is not supported by this browser.");
+		}
+	},
+
+	geolocationSuccess: function (position) {
+		jQuery('#geolocation_detection_wait').slideUp();
+		jQuery('#geolocation_detection_success').slideDown();
+
+		var box = jQuery('#geolocation_detection_result');
+
+		box.html("<iframe id='geolocation_map' src=\"https://maps.google.com/?ie=UTF8&amp;ll=" + position.coords.latitude + "," + position.coords.longitude + "&amp;t=h&amp;z=10&amp;output=embed\"></iframe><br /><small><a href=\"https://maps.google.com/?ie=UTF8&amp;ll=45.65,9.25&amp;spn=0.006892,0.016512&amp;t=h&amp;z=17&amp;source=embed\" class='map_view_large'>View Larger Map</a></small>");
+
+		box.slideDown();
+	},
+
+	geolocationDetectionError: function (error) {
+		jQuery('#geolocation_detection_wait').slideUp();
+
+		var box = jQuery('#geolocation_detection_result');
+		switch (error.code) {
+			case error.PERMISSION_DENIED:
+				IpLeak.geolocationDetectionErrorMessage("User denied the request for Geolocation.");
+				break;
+			case error.POSITION_UNAVAILABLE:
+				IpLeak.geolocationDetectionErrorMessage("Location information is unavailable.");
+				break;
+			case error.TIMEOUT:
+				IpLeak.geolocationDetectionErrorMessage("The request to get user location timed out.");
+				break;
+			case error.UNKNOWN_ERROR:
+				IpLeak.geolocationDetectionErrorMessage("An unknown error occurred.");
+				break;
+		}
+	},
+
+	geolocationDetectionErrorMessage: function (msg) {
+		var box = jQuery('#geolocation_detection_result');
+		box.html("<img class='width16px' src='/static/images/status/no.png'> " + msg);
+		box.slideDown();
+	},
+
+	rtcDetection: function () {
+		// Based on work by https://github.com/diafygi/webrtc-ips
+
+		var RTCPeerConnection = IpLeak.rtcGetPeerConnection();
+
+		if (typeof RTCPeerConnection === 'undefined') {
+			jQuery('#rtc_placeholder').append(jQuery("<div><img class='width16px' src='/static/images/status/yes.png'>No leak, RTCPeerConnection not available.</div>"));
+			return;
+		}
+
+		jQuery('#rtc_placeholder_private_v4').slideDown();
+		jQuery('#rtc_placeholder_private_v6').slideDown();
+		jQuery('#rtc_docs').slideDown();
+
+		IpLeak.rtcDetectionDo(function (ip) {
+			IpLeak.addIpBox(ip, jQuery('#rtc_placeholder'));
+		});
+	},
+
+	rtcGetPeerConnection: function () {
+		// Based on work by https://github.com/diafygi/webrtc-ips
+
+		var RTCPeerConnection = window.RTCPeerConnection
+					  || window.mozRTCPeerConnection
+					  || window.webkitRTCPeerConnection;
+
+		//bypass naive webrtc blocking
+		if (!RTCPeerConnection) {
+			var iframe = document.createElement('iframe');
+			iframe.style.display = 'none';
+			document.body.appendChild(iframe);
+			var win = iframe.contentWindow;
+			window.RTCPeerConnection = win.RTCPeerConnection;
+			window.mozRTCPeerConnection = win.mozRTCPeerConnection;
+			window.webkitRTCPeerConnection = win.webkitRTCPeerConnection;
+			RTCPeerConnection = window.RTCPeerConnection
+				|| window.mozRTCPeerConnection
+				|| window.webkitRTCPeerConnection;
+		}
+
+		return RTCPeerConnection;
+	},
+
+
+	// Get the IP addresses associated with an account
+	// Thanks: https://github.com/diafygi/webrtc-ips
+
+	rtcDetectionDo: function (callback) {
+		// Based on work by https://github.com/diafygi/webrtc-ips
+
+		var ip_dups = {};
+
+		var RTCPeerConnection = IpLeak.rtcGetPeerConnection();
+
+		var mediaConstraints =
+		{
+			optional: [{ RtpDataChannels: true }]
+		};
+
+		var servers = { iceServers: [{ urls: "stun:stun.dnsleak.net" }] };
+
+		var pc = new RTCPeerConnection(servers, mediaConstraints);
+
+		pc.onicecandidate = function (ice) {
+			// Skip non-candidate events
+			if (ice.candidate) {
+				var parts = ice.candidate.candidate.split(" ");
+				var ip_addr = parts[4];
+
+				// Remove duplicates
+				if (ip_dups[ip_addr] === undefined)
+					callback(ip_addr);
+
+				ip_dups[ip_addr] = true;
+			}
+		};
+
+		// Create a bogus data channel
+		pc.createDataChannel("");
+
+		// Create an offer sdp
+		pc.createOffer(function (result) {
+			// Trigger the stun server request
+			pc.setLocalDescription(result, function () { }, function () { });
+
+		}, function () { });
+	},
+
+	dnsDetection: function () {
+		var h = IpLeak.makeID();
+
+		var objWait = jQuery("<div class=\"wait2\"></div>");
+		var availWidth = jQuery("#dnsplaceholder_waits").width() - 50;
+		objWait.css("width", availWidth / IpLeak.dnsDetectionTestMax);
+		jQuery("#dnsplaceholder_waits").append(objWait);
+		objWait.attr("id", h);
+
+		var url = "https://" + h + ".ipleak.net/dnsdetect/";
+
+		jQuery.ajax({
+			type: "GET",
+			url: url,
+			cache: false,
+			success: function (data, status, settings) {
+				var i = data.replaceAll(".", "_").replaceAll(":", "-");
+				if (i in IpLeak.dnsDetectionResults) {
+					// Already exists
+				}
+				else {
+					IpLeak.dnsDetectionResults[i] = true;
+					var domResult = IpLeak.addIpBox(data, jQuery("#dnsplaceholder_results"));
+					IpLeak.dnsDetectionServers++;
+				}
+			},
+			error: function (ajaxrequest, ajaxOptions, thrownError) {
+				console.log(thrownError);
+				IpLeak.dnsDetectionErrors++;
+			},
+			complete: function () {
+				IpLeak.dnsDetectionTestDone++;
+
+				jQuery("#" + h).css("opacity", "0");
+
+				var title = "";
+
+				if (IpLeak.dnsDetectionServers > 1)
+					title = "DNS Addresses - ";
+				else
+					title = "DNS Address - ";
+
+				title += IpLeak.dnsDetectionServers;
+				if (IpLeak.dnsDetectionServers == 1)
+					title += " server";
+				else
+					title += " servers";
+
+				if (IpLeak.dnsDetectionTestDone != IpLeak.dnsDetectionTestMax)
+					title += ", " + (IpLeak.dnsDetectionTestMax - IpLeak.dnsDetectionTestDone) + " tests pending";
+
+				if (IpLeak.dnsDetectionErrors != 0)
+					title += ", " + IpLeak.dnsDetectionErrors + " errors.";
+
+				jQuery("#dnsdetection_title").text(title);
+			}
+		});
+	},
+
+	torrentDetectionUpdate: function () {
+		if (IpLeak.torrentHash == "") {
+			var possible = "abcdef0123456789";
+
+			for (var i = 0; i < 40; i++)
+				IpLeak.torrentHash += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+		var url = "/?thash=" + IpLeak.torrentHash + "&details=" + (IpLeak.torrentViewRequest ? "1" : "0");		
+		jQuery("#torrent_detection").fadeIn(1000);
+		jQuery("#torrent_detection").load(url, function() {
+			jQuery("#torrent_detection_refresh2").click(function() {
+				IpLeak.torrentDetectionUpdate();
+			});
+
+			jQuery("#torrent_detection_switch").click(function() {
+				IpLeak.torrentViewRequest = !IpLeak.torrentViewRequest;
+				IpLeak.torrentDetectionUpdate();
+			});
+		});
+
+		jQuery("#torrent_detection_refresh").fadeOut(1000);
+
+		if (IpLeak.torrentUpdateInterval == 0)
+			IpLeak.torrentUpdateInterval = setInterval(function () { IpLeak.torrentDetectionUpdate() }, 10000);
+	},
+
+	makeID: function () {
+		var text = "";
+		var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i < 40; i++)
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+		return text;
+	},
+
+	addIpBox: function (ip, container) {
+		var url = "/?mode=ajax&ip=" + ip;
+		var objBox = jQuery("<div class=\"dns_box\"></div>");
+
+		objBox.load(url, function (response, status, xhr) {
+			if (status == "error") {
+				var msg = "Sorry but there was an error: ";
+				jQuery("#error").html(msg + xhr.status + " " + xhr.statusText);
+			}
+
+			var h = jQuery(this).children(":first").attr("data-h");
+			var i = jQuery(this).children(":first").attr("data-i");
+
+			jQuery(container).append(jQuery(this));
+			jQuery(this).hide();
+			jQuery(this).fadeIn(1000);
+
+			IpLeak.initTooltip(jQuery(this).find("[data-tooltip]"));
+		});
+
+		return objBox;
+	},
+}
+
+
+/* -------------------------------
+	JavaScript extension
+-------------------------------*/
+
+String.prototype.capitalize = function() {
+	return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+String.prototype.replaceAll = function (search, replace, ignoreCase) {
+	if (ignoreCase) {
+		var result = [];
+		var _string = this.toLowerCase();
+		var _search = search.toLowerCase();
+		var start = 0, match, length = _search.length;
+		while ((match = _string.indexOf(_search, start)) >= 0) {
+			result.push(this.slice(start, match));
+			start = match + length;
+		}
+		result.push(this.slice(start));
+	} else {
+		result = this.split(search);
+	}
+	return result.join(replace);
+}
+
+
+
+jQuery(window).on("load", function (e) {
+	IpLeak.start();
+})
+/*
+jQuery(window).load(function () {
+	IpLeak.start();
+});
+*/B»ÎÕ      ]{Â]{È@À√pGÂ   +    :https://ipleak.net/static/js/index.js?t=18 necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/2.0 200 OK
+server: nginx
+date: Fri, 13 Sep 2019 04:12:41 GMT
+content-type: application/javascript
+content-length: 18673
+last-modified: Fri, 26 Apr 2019 15:05:28 GMT
+etag: "5cc31e38-48f1"
+expires: Thu, 31 Dec 2037 23:55:55 GMT
+cache-control: max-age=315360000
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+feature-policy: autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; microphone 'none'; magnetometer 'none'; midi 'none'; payment 'none'; speaker 'self'; sync-xhr 'self'; vr 'none';
+content-security-policy: default-src 'none'; connect-src 'self' ipleak.net:* *.ipleak.net:*; font-src 'self'; frame-src 'self' *.google.com; img-src 'self' data:; script-src 'self'; style-src 'self'; base-uri 'none'; frame-ancestors 'self' ipleak.net; form-action 'self'
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-filter: limit
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+access-control-expose-headers: Content-Length,Content-Range
+accept-ranges: bytes
+X-Firefox-Spdy: h2
+ original-response-headers server: nginx
+date: Fri, 13 Sep 2019 04:12:41 GMT
+content-type: application/javascript
+content-length: 18673
+last-modified: Fri, 26 Apr 2019 15:05:28 GMT
+etag: "5cc31e38-48f1"
+expires: Thu, 31 Dec 2037 23:55:55 GMT
+cache-control: max-age=315360000
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+feature-policy: autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; microphone 'none'; magnetometer 'none'; midi 'none'; payment 'none'; speaker 'self'; sync-xhr 'self'; vr 'none';
+content-security-policy: default-src 'none'; connect-src 'self' ipleak.net:* *.ipleak.net:*; font-src 'self'; frame-src 'self' *.google.com; img-src 'self' data:; script-src 'self'; style-src 'self'; base-uri 'none'; frame-ancestors 'self' ipleak.net; form-action 'self'
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-filter: limit
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+access-control-expose-headers: Content-Length,Content-Range
+accept-ranges: bytes
+X-Firefox-Spdy: h2
+ uncompressed-len 0 net-response-time-onstart 4252 net-response-time-onstop 4256   HÒ

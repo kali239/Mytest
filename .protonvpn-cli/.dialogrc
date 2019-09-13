@@ -1,0 +1,8 @@
+
+bindkey menubox \j ITEM_NEXT
+bindkey menubox \k ITEM_PREV
+bindkey menubox \q ESC
+bindkey menubox \g PAGE_FIRST
+bindkey menubox \G PAGE_LAST
+bindkey menubox \l FIELD_NEXT
+bindkey menubox \h FIELD_NEXT

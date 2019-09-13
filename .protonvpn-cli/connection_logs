@@ -1,0 +1,433 @@
+Fri Sep 13 13:55:34 2019 us=217157 Current Parameter Settings:
+Fri Sep 13 13:55:34 2019 us=217596   config = '/home/kali/.protonvpn-cli/protonvpn_openvpn_config.conf'
+Fri Sep 13 13:55:34 2019 us=217740   mode = 0
+Fri Sep 13 13:55:34 2019 us=217785   persist_config = DISABLED
+Fri Sep 13 13:55:34 2019 us=217830   persist_mode = 1
+Fri Sep 13 13:55:34 2019 us=217875   show_ciphers = DISABLED
+Fri Sep 13 13:55:34 2019 us=217919   show_digests = DISABLED
+Fri Sep 13 13:55:34 2019 us=217963   show_engines = DISABLED
+Fri Sep 13 13:55:34 2019 us=218007   genkey = DISABLED
+Fri Sep 13 13:55:34 2019 us=218051   key_pass_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=218095   show_tls_ciphers = DISABLED
+Fri Sep 13 13:55:34 2019 us=218141   connect_retry_max = 0
+Fri Sep 13 13:55:34 2019 us=218185 Connection profiles [0]:
+Fri Sep 13 13:55:34 2019 us=218230   proto = udp
+Fri Sep 13 13:55:34 2019 us=218274   local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=218319   local_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=218363   remote = '198.52.36.20'
+Fri Sep 13 13:55:34 2019 us=218407   remote_port = '80'
+Fri Sep 13 13:55:34 2019 us=218451   remote_float = DISABLED
+Fri Sep 13 13:55:34 2019 us=218495   bind_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=218539   bind_local = DISABLED
+Fri Sep 13 13:55:34 2019 us=218583   bind_ipv6_only = DISABLED
+Fri Sep 13 13:55:34 2019 us=218629   connect_retry_seconds = 5
+Fri Sep 13 13:55:34 2019 us=218673   connect_timeout = 120
+Fri Sep 13 13:55:34 2019 us=218718   socks_proxy_server = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=218762   socks_proxy_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=218807   tun_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=218851   tun_mtu_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=218896   link_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=218940   link_mtu_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=218985   tun_mtu_extra = 32
+Fri Sep 13 13:55:34 2019 us=219029   tun_mtu_extra_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=219074   mtu_discover_type = -1
+Fri Sep 13 13:55:34 2019 us=219145   fragment = 0
+Fri Sep 13 13:55:34 2019 us=219191   mssfix = 1450
+Fri Sep 13 13:55:34 2019 us=219235   explicit_exit_notification = 0
+Fri Sep 13 13:55:34 2019 us=219280 Connection profiles [1]:
+Fri Sep 13 13:55:34 2019 us=219324   proto = udp
+Fri Sep 13 13:55:34 2019 us=219368   local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=219412   local_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=219457   remote = '198.52.36.20'
+Fri Sep 13 13:55:34 2019 us=219501   remote_port = '443'
+Fri Sep 13 13:55:34 2019 us=219545   remote_float = DISABLED
+Fri Sep 13 13:55:34 2019 us=219589   bind_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=219686   bind_local = DISABLED
+Fri Sep 13 13:55:34 2019 us=219734   bind_ipv6_only = DISABLED
+Fri Sep 13 13:55:34 2019 us=219779   connect_retry_seconds = 5
+Fri Sep 13 13:55:34 2019 us=219824   connect_timeout = 120
+Fri Sep 13 13:55:34 2019 us=219868   socks_proxy_server = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=219913   socks_proxy_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=219957   tun_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=220001   tun_mtu_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=220046   link_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=220090   link_mtu_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=220136   tun_mtu_extra = 32
+Fri Sep 13 13:55:34 2019 us=220181   tun_mtu_extra_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=220225   mtu_discover_type = -1
+Fri Sep 13 13:55:34 2019 us=220270   fragment = 0
+Fri Sep 13 13:55:34 2019 us=220314   mssfix = 1450
+Fri Sep 13 13:55:34 2019 us=220359   explicit_exit_notification = 0
+Fri Sep 13 13:55:34 2019 us=220403 Connection profiles [2]:
+Fri Sep 13 13:55:34 2019 us=220447   proto = udp
+Fri Sep 13 13:55:34 2019 us=220492   local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=220580   local_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=220627   remote = '198.52.36.20'
+Fri Sep 13 13:55:34 2019 us=220671   remote_port = '4569'
+Fri Sep 13 13:55:34 2019 us=220715   remote_float = DISABLED
+Fri Sep 13 13:55:34 2019 us=220759   bind_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=220803   bind_local = DISABLED
+Fri Sep 13 13:55:34 2019 us=220906   bind_ipv6_only = DISABLED
+Fri Sep 13 13:55:34 2019 us=220951   connect_retry_seconds = 5
+Fri Sep 13 13:55:34 2019 us=220995   connect_timeout = 120
+Fri Sep 13 13:55:34 2019 us=221040   socks_proxy_server = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=221084   socks_proxy_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=221129   tun_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=221173   tun_mtu_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=221217   link_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=221261   link_mtu_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=221306   tun_mtu_extra = 32
+Fri Sep 13 13:55:34 2019 us=221350   tun_mtu_extra_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=221394   mtu_discover_type = -1
+Fri Sep 13 13:55:34 2019 us=221438   fragment = 0
+Fri Sep 13 13:55:34 2019 us=221482   mssfix = 1450
+Fri Sep 13 13:55:34 2019 us=221527   explicit_exit_notification = 0
+Fri Sep 13 13:55:34 2019 us=221571 Connection profiles [3]:
+Fri Sep 13 13:55:34 2019 us=221616   proto = udp
+Fri Sep 13 13:55:34 2019 us=221660   local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=221705   local_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=221749   remote = '198.52.36.20'
+Fri Sep 13 13:55:34 2019 us=221793   remote_port = '1194'
+Fri Sep 13 13:55:34 2019 us=221838   remote_float = DISABLED
+Fri Sep 13 13:55:34 2019 us=221882   bind_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=221926   bind_local = DISABLED
+Fri Sep 13 13:55:34 2019 us=221970   bind_ipv6_only = DISABLED
+Fri Sep 13 13:55:34 2019 us=222014   connect_retry_seconds = 5
+Fri Sep 13 13:55:34 2019 us=222059   connect_timeout = 120
+Fri Sep 13 13:55:34 2019 us=222103   socks_proxy_server = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=222149   socks_proxy_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=222193   tun_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=222237   tun_mtu_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=222282   link_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=222326   link_mtu_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=222371   tun_mtu_extra = 32
+Fri Sep 13 13:55:34 2019 us=222415   tun_mtu_extra_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=222460   mtu_discover_type = -1
+Fri Sep 13 13:55:34 2019 us=222505   fragment = 0
+Fri Sep 13 13:55:34 2019 us=222549   mssfix = 1450
+Fri Sep 13 13:55:34 2019 us=222594   explicit_exit_notification = 0
+Fri Sep 13 13:55:34 2019 us=222639 Connection profiles [4]:
+Fri Sep 13 13:55:34 2019 us=222684   proto = udp
+Fri Sep 13 13:55:34 2019 us=222728   local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=222773   local_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=222817   remote = '198.52.36.20'
+Fri Sep 13 13:55:34 2019 us=222861   remote_port = '5060'
+Fri Sep 13 13:55:34 2019 us=222906   remote_float = DISABLED
+Fri Sep 13 13:55:34 2019 us=222950   bind_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=222994   bind_local = DISABLED
+Fri Sep 13 13:55:34 2019 us=223039   bind_ipv6_only = DISABLED
+Fri Sep 13 13:55:34 2019 us=223083   connect_retry_seconds = 5
+Fri Sep 13 13:55:34 2019 us=223129   connect_timeout = 120
+Fri Sep 13 13:55:34 2019 us=223174   socks_proxy_server = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=223218   socks_proxy_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=223263   tun_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=223307   tun_mtu_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=223352   link_mtu = 1500
+Fri Sep 13 13:55:34 2019 us=223396   link_mtu_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=223441   tun_mtu_extra = 32
+Fri Sep 13 13:55:34 2019 us=223486   tun_mtu_extra_defined = ENABLED
+Fri Sep 13 13:55:34 2019 us=223530   mtu_discover_type = -1
+Fri Sep 13 13:55:34 2019 us=223575   fragment = 0
+Fri Sep 13 13:55:34 2019 us=223704   mssfix = 1450
+Fri Sep 13 13:55:34 2019 us=223755   explicit_exit_notification = 0
+Fri Sep 13 13:55:34 2019 us=224086 Connection profiles END
+Fri Sep 13 13:55:34 2019 us=224202   remote_random = ENABLED
+Fri Sep 13 13:55:34 2019 us=224248   ipchange = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224293   dev = 'tun'
+Fri Sep 13 13:55:34 2019 us=224337   dev_type = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224382   dev_node = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224436   lladdr = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224481   topology = 1
+Fri Sep 13 13:55:34 2019 us=224525   ifconfig_local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224570   ifconfig_remote_netmask = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224682   ifconfig_noexec = DISABLED
+Fri Sep 13 13:55:34 2019 us=224728   ifconfig_nowarn = DISABLED
+Fri Sep 13 13:55:34 2019 us=224772   ifconfig_ipv6_local = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224817   ifconfig_ipv6_netbits = 0
+Fri Sep 13 13:55:34 2019 us=224861   ifconfig_ipv6_remote = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=224906   shaper = 0
+Fri Sep 13 13:55:34 2019 us=224950   mtu_test = 0
+Fri Sep 13 13:55:34 2019 us=224995   mlock = DISABLED
+Fri Sep 13 13:55:34 2019 us=225039   keepalive_ping = 0
+Fri Sep 13 13:55:34 2019 us=225084   keepalive_timeout = 0
+Fri Sep 13 13:55:34 2019 us=225129   inactivity_timeout = 0
+Fri Sep 13 13:55:34 2019 us=225174   ping_send_timeout = 0
+Fri Sep 13 13:55:34 2019 us=225219   ping_rec_timeout = 0
+Fri Sep 13 13:55:34 2019 us=225263   ping_rec_timeout_action = 0
+Fri Sep 13 13:55:34 2019 us=225307   ping_timer_remote = DISABLED
+Fri Sep 13 13:55:34 2019 us=225351   remap_sigusr1 = 0
+Fri Sep 13 13:55:34 2019 us=225396   persist_tun = ENABLED
+Fri Sep 13 13:55:34 2019 us=225440   persist_local_ip = DISABLED
+Fri Sep 13 13:55:34 2019 us=225484   persist_remote_ip = DISABLED
+Fri Sep 13 13:55:34 2019 us=225528   persist_key = ENABLED
+Fri Sep 13 13:55:34 2019 us=225572   passtos = DISABLED
+Fri Sep 13 13:55:34 2019 us=225617   resolve_retry_seconds = 1000000000
+Fri Sep 13 13:55:34 2019 us=225679   resolve_in_advance = DISABLED
+Fri Sep 13 13:55:34 2019 us=225723   username = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=225768   groupname = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=225812   chroot_dir = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=225856   cd_dir = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=225900   writepid = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=225945   up_script = '/etc/openvpn/update-resolv-conf'
+Fri Sep 13 13:55:34 2019 us=225989   down_script = '/etc/openvpn/update-resolv-conf'
+Fri Sep 13 13:55:34 2019 us=226033   down_pre = DISABLED
+Fri Sep 13 13:55:34 2019 us=226078   up_restart = DISABLED
+Fri Sep 13 13:55:34 2019 us=226123   up_delay = DISABLED
+Fri Sep 13 13:55:34 2019 us=226167   daemon = ENABLED
+Fri Sep 13 13:55:34 2019 us=226211   inetd = 0
+Fri Sep 13 13:55:34 2019 us=226256   log = ENABLED
+Fri Sep 13 13:55:34 2019 us=226300   suppress_timestamps = DISABLED
+Fri Sep 13 13:55:34 2019 us=226344   machine_readable_output = DISABLED
+Fri Sep 13 13:55:34 2019 us=226388   nice = 0
+Fri Sep 13 13:55:34 2019 us=226433   verbosity = 4
+Fri Sep 13 13:55:34 2019 us=226477   mute = 0
+Fri Sep 13 13:55:34 2019 us=226522   gremlin = 0
+Fri Sep 13 13:55:34 2019 us=226566   status_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=226610   status_file_version = 1
+Fri Sep 13 13:55:34 2019 us=226656   status_file_update_freq = 60
+Fri Sep 13 13:55:34 2019 us=226700   occ = ENABLED
+Fri Sep 13 13:55:34 2019 us=226745   rcvbuf = 0
+Fri Sep 13 13:55:34 2019 us=226789   sndbuf = 0
+Fri Sep 13 13:55:34 2019 us=226833   mark = 0
+Fri Sep 13 13:55:34 2019 us=226878   sockflags = 0
+Fri Sep 13 13:55:34 2019 us=226922   fast_io = ENABLED
+Fri Sep 13 13:55:34 2019 us=226966   comp.alg = 1
+Fri Sep 13 13:55:34 2019 us=227011   comp.flags = 0
+Fri Sep 13 13:55:34 2019 us=227055   route_script = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227099   route_default_gateway = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227180   route_default_metric = 0
+Fri Sep 13 13:55:34 2019 us=227225   route_noexec = DISABLED
+Fri Sep 13 13:55:34 2019 us=227269   route_delay = 0
+Fri Sep 13 13:55:34 2019 us=227314   route_delay_window = 30
+Fri Sep 13 13:55:34 2019 us=227358   route_delay_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=227402   route_nopull = DISABLED
+Fri Sep 13 13:55:34 2019 us=227446   route_gateway_via_dhcp = DISABLED
+Fri Sep 13 13:55:34 2019 us=227490   allow_pull_fqdn = DISABLED
+Fri Sep 13 13:55:34 2019 us=227535   management_addr = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227634   management_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227679   management_user_pass = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227724   management_log_history_cache = 250
+Fri Sep 13 13:55:34 2019 us=227768   management_echo_buffer_size = 100
+Fri Sep 13 13:55:34 2019 us=227812   management_write_peer_info_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227857   management_client_user = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227901   management_client_group = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=227945   management_flags = 0
+Fri Sep 13 13:55:34 2019 us=227989   shared_secret_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=228034   key_direction = 1
+Fri Sep 13 13:55:34 2019 us=228078   ciphername = 'AES-256-CBC'
+Fri Sep 13 13:55:34 2019 us=228123   ncp_enabled = ENABLED
+Fri Sep 13 13:55:34 2019 us=228167   ncp_ciphers = 'AES-256-GCM:AES-128-GCM'
+Fri Sep 13 13:55:34 2019 us=228211   authname = 'SHA512'
+Fri Sep 13 13:55:34 2019 us=228255   prng_hash = 'SHA1'
+Fri Sep 13 13:55:34 2019 us=228300   prng_nonce_secret_len = 16
+Fri Sep 13 13:55:34 2019 us=228344   keysize = 0
+Fri Sep 13 13:55:34 2019 us=228388   engine = DISABLED
+Fri Sep 13 13:55:34 2019 us=228432   replay = ENABLED
+Fri Sep 13 13:55:34 2019 us=228476   mute_replay_warnings = DISABLED
+Fri Sep 13 13:55:34 2019 us=228520   replay_window = 64
+Fri Sep 13 13:55:34 2019 us=228565   replay_time = 15
+Fri Sep 13 13:55:34 2019 us=228609   packet_id_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=228654   use_iv = ENABLED
+Fri Sep 13 13:55:34 2019 us=228698   test_crypto = DISABLED
+Fri Sep 13 13:55:34 2019 us=228742   tls_server = DISABLED
+Fri Sep 13 13:55:34 2019 us=228786   tls_client = ENABLED
+Fri Sep 13 13:55:34 2019 us=228831   key_method = 2
+Fri Sep 13 13:55:34 2019 us=228875   ca_file = '[[INLINE]]'
+Fri Sep 13 13:55:34 2019 us=228919   ca_path = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=228963   dh_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229007   cert_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229051   extra_certs_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229096   priv_key_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229197   pkcs12_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229242   cipher_list = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229286   cipher_list_tls13 = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229330   tls_cert_profile = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229374   tls_verify = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229419   tls_export_cert = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229463   verify_x509_type = 0
+Fri Sep 13 13:55:34 2019 us=229507   verify_x509_name = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229551   crl_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=229596   ns_cert_type = 0
+Fri Sep 13 13:55:34 2019 us=229652   remote_cert_ku[i] = 65535
+Fri Sep 13 13:55:34 2019 us=229699   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229744   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229788   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229832   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229877   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229921   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=229965   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230009   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230053   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230098   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230143   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230187   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230231   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230275   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230320   remote_cert_ku[i] = 0
+Fri Sep 13 13:55:34 2019 us=230364   remote_cert_eku = 'TLS Web Server Authentication'
+Fri Sep 13 13:55:34 2019 us=230409   ssl_flags = 0
+Fri Sep 13 13:55:34 2019 us=230453   tls_timeout = 2
+Fri Sep 13 13:55:34 2019 us=230498   renegotiate_bytes = -1
+Fri Sep 13 13:55:34 2019 us=230542   renegotiate_packets = 0
+Fri Sep 13 13:55:34 2019 us=230586   renegotiate_seconds = 0
+Fri Sep 13 13:55:34 2019 us=230733   handshake_window = 60
+Fri Sep 13 13:55:34 2019 us=230954   transition_window = 3600
+Fri Sep 13 13:55:34 2019 us=231001   single_session = DISABLED
+Fri Sep 13 13:55:34 2019 us=231045   push_peer_info = DISABLED
+Fri Sep 13 13:55:34 2019 us=231090   tls_exit = DISABLED
+Fri Sep 13 13:55:34 2019 us=231135   tls_auth_file = '[[INLINE]]'
+Fri Sep 13 13:55:34 2019 us=231180   tls_crypt_file = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=231225   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231269   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231313   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231357   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231402   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231446   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231490   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231534   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231578   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231623   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231697   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231741   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231785   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231829   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231874   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231918   pkcs11_protected_authentication = DISABLED
+Fri Sep 13 13:55:34 2019 us=231962   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232007   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232051   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232095   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232272   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232377   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232422   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232467   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232511   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232556   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232600   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232646   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232690   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232734   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232779   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232823   pkcs11_private_mode = 00000000
+Fri Sep 13 13:55:34 2019 us=232868   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=232912   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=232956   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233000   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233044   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233088   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233183   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233228   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233273   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233317   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233361   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233405   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233449   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233493   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233537   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233581   pkcs11_cert_private = DISABLED
+Fri Sep 13 13:55:34 2019 us=233662   pkcs11_pin_cache_period = -1
+Fri Sep 13 13:55:34 2019 us=233707   pkcs11_id = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=233752   pkcs11_id_management = DISABLED
+Fri Sep 13 13:55:34 2019 us=233798   server_network = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=233858   server_netmask = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234012   server_network_ipv6 = ::
+Fri Sep 13 13:55:34 2019 us=234059   server_netbits_ipv6 = 0
+Fri Sep 13 13:55:34 2019 us=234104   server_bridge_ip = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234262   server_bridge_netmask = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234309   server_bridge_pool_start = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234355   server_bridge_pool_end = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234399   ifconfig_pool_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=234445   ifconfig_pool_start = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234490   ifconfig_pool_end = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234536   ifconfig_pool_netmask = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=234580   ifconfig_pool_persist_filename = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=234625   ifconfig_pool_persist_refresh_freq = 600
+Fri Sep 13 13:55:34 2019 us=234670   ifconfig_ipv6_pool_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=234715   ifconfig_ipv6_pool_base = ::
+Fri Sep 13 13:55:34 2019 us=234759   ifconfig_ipv6_pool_netbits = 0
+Fri Sep 13 13:55:34 2019 us=234804   n_bcast_buf = 256
+Fri Sep 13 13:55:34 2019 us=234848   tcp_queue_limit = 64
+Fri Sep 13 13:55:34 2019 us=234893   real_hash_size = 256
+Fri Sep 13 13:55:34 2019 us=234937   virtual_hash_size = 256
+Fri Sep 13 13:55:34 2019 us=234981   client_connect_script = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=235026   learn_address_script = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=235070   client_disconnect_script = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=235114   client_config_dir = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=235159   ccd_exclusive = DISABLED
+Fri Sep 13 13:55:34 2019 us=235203   tmp_dir = '/tmp'
+Fri Sep 13 13:55:34 2019 us=235247   push_ifconfig_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=235377   push_ifconfig_local = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=235424   push_ifconfig_remote_netmask = 0.0.0.0
+Fri Sep 13 13:55:34 2019 us=235468   push_ifconfig_ipv6_defined = DISABLED
+Fri Sep 13 13:55:34 2019 us=235514   push_ifconfig_ipv6_local = ::/0
+Fri Sep 13 13:55:34 2019 us=235559   push_ifconfig_ipv6_remote = ::
+Fri Sep 13 13:55:34 2019 us=235603   enable_c2c = DISABLED
+Fri Sep 13 13:55:34 2019 us=235787   duplicate_cn = DISABLED
+Fri Sep 13 13:55:34 2019 us=235833   cf_max = 0
+Fri Sep 13 13:55:34 2019 us=235877   cf_per = 0
+Fri Sep 13 13:55:34 2019 us=235922   max_clients = 1024
+Fri Sep 13 13:55:34 2019 us=235967   max_routes_per_client = 256
+Fri Sep 13 13:55:34 2019 us=236011   auth_user_pass_verify_script = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=236055   auth_user_pass_verify_script_via_file = DISABLED
+Fri Sep 13 13:55:34 2019 us=236100   auth_token_generate = DISABLED
+Fri Sep 13 13:55:34 2019 us=236181   auth_token_lifetime = 0
+Fri Sep 13 13:55:34 2019 us=236225   port_share_host = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=236270   port_share_port = '[UNDEF]'
+Fri Sep 13 13:55:34 2019 us=236314   client = ENABLED
+Fri Sep 13 13:55:34 2019 us=236358   pull = ENABLED
+Fri Sep 13 13:55:34 2019 us=236403   auth_user_pass_file = '/home/kali/.protonvpn-cli/protonvpn_openvpn_credentials'
+Fri Sep 13 13:55:34 2019 us=236450 OpenVPN 2.4.7 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] built on Feb 20 2019
+Fri Sep 13 13:55:34 2019 us=236580 library versions: OpenSSL 1.1.1c  28 May 2019, LZO 2.10
+Fri Sep 13 13:55:34 2019 us=251635 NOTE: the current --script-security setting may allow this configuration to call user-defined scripts
+Fri Sep 13 13:55:34 2019 us=272538 Outgoing Control Channel Authentication: Using 512 bit message hash 'SHA512' for HMAC authentication
+Fri Sep 13 13:55:34 2019 us=272696 Incoming Control Channel Authentication: Using 512 bit message hash 'SHA512' for HMAC authentication
+Fri Sep 13 13:55:34 2019 us=273949 Control Channel MTU parms [ L:1654 D:1140 EF:110 EB:0 ET:0 EL:3 ]
+Fri Sep 13 13:55:34 2019 us=274405 Data Channel MTU parms [ L:1654 D:1450 EF:122 EB:411 ET:32 EL:3 ]
+Fri Sep 13 13:55:34 2019 us=274562 Local Options String (VER=V4): 'V4,dev-type tun,link-mtu 1634,tun-mtu 1532,proto UDPv4,comp-lzo,keydir 1,cipher AES-256-CBC,auth SHA512,keysize 256,tls-auth,key-method 2,tls-client'
+Fri Sep 13 13:55:34 2019 us=274773 Expected Remote Options String (VER=V4): 'V4,dev-type tun,link-mtu 1634,tun-mtu 1532,proto UDPv4,comp-lzo,keydir 0,cipher AES-256-CBC,auth SHA512,keysize 256,tls-auth,key-method 2,tls-server'
+Fri Sep 13 13:55:34 2019 us=274840 TCP/UDP: Preserving recently used remote address: [AF_INET]198.52.36.20:4569
+Fri Sep 13 13:55:34 2019 us=275003 Socket Buffers: R=[212992->212992] S=[212992->212992]
+Fri Sep 13 13:55:34 2019 us=275060 UDP link local: (not bound)
+Fri Sep 13 13:55:34 2019 us=275105 UDP link remote: [AF_INET]198.52.36.20:4569
+Fri Sep 13 13:55:34 2019 us=371417 TLS: Initial packet from [AF_INET]198.52.36.20:4569, sid=d1af48fe 912ed15c
+Fri Sep 13 13:55:34 2019 us=371947 WARNING: this configuration may cache passwords in memory -- use the auth-nocache option to prevent this
+Fri Sep 13 13:55:34 2019 us=431700 VERIFY OK: depth=2, C=CH, O=ProtonVPN AG, CN=ProtonVPN Root CA
+Fri Sep 13 13:55:34 2019 us=432419 VERIFY OK: depth=1, C=CH, O=ProtonVPN AG, CN=ProtonVPN Intermediate CA 1
+Fri Sep 13 13:55:34 2019 us=433205 VERIFY KU OK
+Fri Sep 13 13:55:34 2019 us=433255 Validating certificate extended key usage
+Fri Sep 13 13:55:34 2019 us=433300 ++ Certificate has EKU (str) TLS Web Server Authentication, expects TLS Web Server Authentication
+Fri Sep 13 13:55:34 2019 us=433343 VERIFY EKU OK
+Fri Sep 13 13:55:34 2019 us=433386 VERIFY OK: depth=0, CN=us-co-10.protonvpn.com
+Fri Sep 13 13:55:34 2019 us=520323 Control Channel: TLSv1.2, cipher TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384, 4096 bit RSA
+Fri Sep 13 13:55:34 2019 us=520446 [us-co-10.protonvpn.com] Peer Connection Initiated with [AF_INET]198.52.36.20:4569
+Fri Sep 13 13:55:35 2019 us=769660 SENT CONTROL [us-co-10.protonvpn.com]: 'PUSH_REQUEST' (status=1)
+Fri Sep 13 13:55:35 2019 us=973420 PUSH: Received control message: 'PUSH_REPLY,redirect-gateway def1,dhcp-option DNS 10.8.8.1,sndbuf 524288,rcvbuf 524288,explicit-exit-notify,comp-lzo no,route-gateway 10.8.3.1,topology subnet,ping 10,ping-restart 60,ifconfig 10.8.3.8 255.255.255.0,peer-id 4,cipher AES-256-GCM'
+Fri Sep 13 13:55:35 2019 us=973726 OPTIONS IMPORT: timers and/or timeouts modified
+Fri Sep 13 13:55:35 2019 us=973774 OPTIONS IMPORT: explicit notify parm(s) modified
+Fri Sep 13 13:55:35 2019 us=973818 OPTIONS IMPORT: compression parms modified
+Fri Sep 13 13:55:35 2019 us=973866 OPTIONS IMPORT: --sndbuf/--rcvbuf options modified
+Fri Sep 13 13:55:35 2019 us=973983 Socket Buffers: R=[212992->425984] S=[212992->425984]
+Fri Sep 13 13:55:35 2019 us=974023 OPTIONS IMPORT: --ifconfig/up options modified
+Fri Sep 13 13:55:35 2019 us=974084 OPTIONS IMPORT: route options modified
+Fri Sep 13 13:55:35 2019 us=974127 OPTIONS IMPORT: route-related options modified
+Fri Sep 13 13:55:35 2019 us=974169 OPTIONS IMPORT: --ip-win32 and/or --dhcp-option options modified
+Fri Sep 13 13:55:35 2019 us=974212 OPTIONS IMPORT: peer-id set
+Fri Sep 13 13:55:35 2019 us=974256 OPTIONS IMPORT: adjusting link_mtu to 1657
+Fri Sep 13 13:55:35 2019 us=974298 OPTIONS IMPORT: data channel crypto options modified
+Fri Sep 13 13:55:35 2019 us=974347 Data Channel: using negotiated cipher 'AES-256-GCM'
+Fri Sep 13 13:55:35 2019 us=974396 Data Channel MTU parms [ L:1585 D:1450 EF:53 EB:411 ET:32 EL:3 ]
+Fri Sep 13 13:55:35 2019 us=974533 Outgoing Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+Fri Sep 13 13:55:35 2019 us=974601 Incoming Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+Fri Sep 13 13:55:35 2019 us=975091 ROUTE_GATEWAY 10.0.2.2/255.255.255.0 IFACE=eth0 HWADDR=08:00:27:cb:a5:1c
+Fri Sep 13 13:55:35 2019 us=976212 TUN/TAP device tun0 opened
+Fri Sep 13 13:55:35 2019 us=976618 TUN/TAP TX queue length set to 100
+Fri Sep 13 13:55:35 2019 us=976837 do_ifconfig, tt->did_ifconfig_ipv6_setup=0
+Fri Sep 13 13:55:35 2019 us=976895 /sbin/ip link set dev tun0 up mtu 1500
+Fri Sep 13 13:55:36 2019 us=98040 /sbin/ip addr add dev tun0 10.8.3.8/24 broadcast 10.8.3.255
+Fri Sep 13 13:55:36 2019 us=142231 /etc/openvpn/update-resolv-conf tun0 1500 1585 10.8.3.8 255.255.255.0 init
+dhcp-option DNS 10.8.8.1
+Fri Sep 13 13:55:37 2019 us=543590 /sbin/ip route add 198.52.36.20/32 via 10.0.2.2
+Fri Sep 13 13:55:37 2019 us=574329 /sbin/ip route add 0.0.0.0/1 via 10.8.3.1
+Fri Sep 13 13:55:37 2019 us=614870 /sbin/ip route add 128.0.0.0/1 via 10.8.3.1
+Fri Sep 13 13:55:37 2019 us=651211 Initialization Sequence Completed
+Fri Sep 13 13:56:53 2019 us=445468 PID_ERR replay-window backtrack occurred [1] [SSL-0] [0_00000000000000000000000000000000000000000000000000000000000000] 0:783 0:782 t=1568397413[0] r=[-3,64,15,1,1] sl=[49,64,64,528]

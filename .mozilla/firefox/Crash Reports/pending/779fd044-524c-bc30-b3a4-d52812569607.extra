@@ -1,0 +1,40 @@
+ContentSandboxLevel=4
+ContentSandboxCapabilities=87
+StartupTime=1567953938
+EMCheckCompatibility=true
+ProductName=Firefox
+FramePoisonBase=9223372036600930304
+TelemetryClientId=
+Vendor=Mozilla
+InstallTime=1567953938
+Theme=classic/1.0
+ReleaseChannel=esr
+Notes=Kali GNU/Linux RollingFP(D00-L1000-W00000000-T000) OpenGL: VMware, Inc. -- llvmpipe (LLVM 8.0, 128 bits) -- 3.1 Mesa 19.1.4 -- texture_from_pixmap\nWR? WR- OMTP? OMTP- 
+FramePoisonSize=4096
+TelemetryEnvironment={"build":{"applicationId":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","applicationName":"Firefox","architecture":"x86-64","buildId":"20190709221323","version":"60.8.0","vendor":"Mozilla","platformVersion":"60.8.0","xpcomAbi":"x86_64-gcc3","updaterAvailable":false},"partner":{"distributionId":null,"distributionVersion":null,"partnerId":null,"distributor":null,"distributorChannel":null,"partnerNames":[]},"system":{"memoryMB":987,"virtualMaxMB":null,"cpu":{"count":2,"cores":2,"vendor":"GenuineIntel","family":6,"model":23,"stepping":10,"l2cacheKB":3072,"l3cacheKB":3072,"speedMHz":null,"extensions":["hasMMX","hasSSE","hasSSE2","hasSSE3","hasSSSE3","hasSSE4_1"]},"os":{"name":"Linux","version":"5.2.0-kali2-amd64","locale":"en-US"},"hdd":{"profile":{"model":null,"revision":null},"binary":{"model":null,"revision":null},"system":{"model":null,"revision":null}},"gfx":{"D2DEnabled":null,"DWriteEnabled":null,"ContentBackend":"Skia","adapters":[{"description":"VMware, Inc. -- llvmpipe (LLVM 8.0, 128 bits)","vendorID":"VMware, Inc.","deviceID":"llvmpipe (LLVM 8.0, 128 bits)","subsysID":null,"RAM":null,"driver":null,"driverVersion":"3.1 Mesa 19.1.4","driverDate":null,"GPUActive":true}],"monitors":[],"features":{"compositor":"basic","gpuProcess":{"status":"unused"}}},"appleModelId":null},"settings":{"blocklistEnabled":true,"e10sEnabled":true,"e10sMultiProcesses":4,"telemetryEnabled":false,"locale":"en-US","update":{"channel":"esr","enabled":false,"autoDownload":true},"userPrefs":{"browser.search.widget.inNavBar":false,"browser.search.region":"US","browser.cache.disk.capacity":358400,"app.shield.optoutstudies.enabled":false},"sandbox":{"effectiveContentProcessLevel":4},"addonCompatibilityCheckEnabled":true,"isDefaultBrowser":true,"defaultSearchEngine":"google-b-1-e","defaultSearchEngineData":{"name":"Google","loadPath":"jar:[app]/omni.ja!browser/google-b-1-e.xml","origin":"default","submissionURL":"https://www.google.com/search?q=&ie=utf-8&oe=utf-8&client=firefox-b-1-e"},"searchCohort":"apr18-1"},"profile":{"creationDate":18147},"addons":{"activeAddons":{"activity-stream@mozilla.org":{"version":"2018.04.20.1103-b3b95672","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"A rich visual history feed and a reimagined home page make it easier than ever to find exactly what ","name":"Activity Stream","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"aushelper@mozilla.org":{"version":"2.0","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"Sets value(s) in the update url based on custom checks.","name":"Application Update Service Helper","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"firefox@getpocket.com":{"version":"1.0.5","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"When you find something you want to view later, put it in Pocket.","name":"Pocket","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"followonsearch@mozilla.com":{"version":"0.9.6","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":null,"name":"Follow-on Search Telemetry","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"formautofill@mozilla.org":{"version":"1.0","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"Autofill forms with saved profiles","name":"Form Autofill","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"jaws-esr@mozilla.org":{"version":"1.2","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"Disabled e10s for users of OLDJAWS.","name":"Firefox ESR configurer for OLDJAWS screen reader","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"onboarding@mozilla.org":{"version":"1.0","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"Photon onboarding","name":"Photon onboarding","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"screenshots@mozilla.org":{"version":"30.1.0","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":null,"name":"Firefox Screenshots","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086},"webcompat@mozilla.org":{"version":"1.1","scope":1,"type":"extension","updateDay":18086,"isSystem":true,"isWebExtension":false,"multiprocessCompatible":true,"blocklisted":false,"description":"Urgent post-release fixes for web compatibility.","name":"Web Compat","userDisabled":false,"appDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086}},"theme":{"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","blocklisted":false,"description":"The default theme.","name":"Default","userDisabled":false,"appDisabled":false,"version":"60.8.0","scope":4,"foreignInstall":false,"hasBinaryComponents":false,"installDay":18086,"updateDay":18086},"activePlugins":[],"activeGMPlugins":{},"activeExperiment":{},"persona":null},"experiments":{"searchCohort":{"branch":"apr18-1"}}}
+ServerURL=https://crash-reports.mozilla.com/submit?id={ec8030f7-c20a-464f-9b0e-13a3a9e97384}&version=60.8.0&buildid=20190709221323
+ShutdownProgress=profile-before-change
+SafeMode=0
+ContentSandboxCapable=1
+useragent_locale=en-US
+Version=60.8.0
+StartupCrash=0
+BuildID=20190709221323
+ProductID={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+TelemetryServerURL=
+URL=https://www.google.com/maps/embed?origin=mfe&pb=!1m11!1m8!1m3!1d392644.43957450154!2d-104.9957!3d39.7501!3m2!1i1024!2i768!4f13.1!5e1!6i10
+DOMIPCEnabled=1
+Add-ons=activity-stream%40mozilla.org:2018.04.20.1103-b3b95672,aushelper%40mozilla.org:2.0,firefox%40getpocket.com:1.0.5,followonsearch%40mozilla.com:0.9.6,formautofill%40mozilla.org:1.0,jaws-esr%40mozilla.org:1.2,onboarding%40mozilla.org:1.0,screenshots%40mozilla.org:30.1.0,webcompat%40mozilla.org:1.1,%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D:60.8.0
+CrashTime=1567957565
+UptimeTS=3631.5477564
+additional_minidumps=browser
+ipc_channel_error=ShutDownKill
+ContentSandboxLevel=4
+ContentSandboxEnabled=1
+ProcessType=content
+DOMIPCEnabled=1
+RemoteType=web
+Notes=FP(D00-L1000-W00000000-T000) WR? WR- OMTP? OMTP- 
+StartupTime=1567955184
+URL=about:privatebrowsing
+ContentSandboxCapabilities=87
